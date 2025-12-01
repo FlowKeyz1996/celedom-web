@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -41,11 +42,17 @@ const TestimonialsSection: React.FC = () => {
   const prev = () =>
     setIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
 
-  const visible = [
-    testimonials[index],
-    testimonials[(index + 1) % testimonials.length],
-    testimonials[(index + 2) % testimonials.length],
-  ];
+  // ✅ Show only 1 card if screen is mobile, otherwise 3
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
+  const visible = isMobile
+    ? [testimonials[index]]
+    : [
+        testimonials[index],
+        testimonials[(index + 1) % testimonials.length],
+        testimonials[(index + 2) % testimonials.length],
+      ];
 
   return (
     <section className="w-full py-24 flex flex-col items-center">
@@ -58,7 +65,6 @@ const TestimonialsSection: React.FC = () => {
       </h2>
 
       <div className="relative w-full max-w-6xl flex items-center justify-center">
-
         {/* Left Arrow */}
         <button
           onClick={prev}
@@ -78,26 +84,31 @@ const TestimonialsSection: React.FC = () => {
                 transition={{ duration: 0.35 }}
                 className="w-80 h-96 relative rounded-2xl overflow-hidden shadow-lg"
               >
-                {/* FULL IMAGE BACKGROUND */}
-                <img
+                {/* Background Image */}
+                <Image
                   src={item.img}
                   alt=""
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
 
-                {/* WHITE CONTENT CARD INSIDE IMAGE */}
+                {/* Content Card */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white rounded-xl shadow-md p-5 text-center">
-
                   {/* Avatar */}
                   <div className="w-16 h-16 mx-auto -mt-10 rounded-full overflow-hidden border-4 border-white shadow-md">
-                    <img
+                    <Image
                       src={item.avatar}
-                      className="w-full h-full object-cover"
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      className="object-cover"
                     />
                   </div>
 
                   <h4 className="font-gendy text-lg mt-2">{item.name}</h4>
-                  <p className="font-liber text-gray-500 text-sm">{item.role}</p>
+                  <p className="font-liber text-gray-500 text-sm">
+                    {item.role}
+                  </p>
 
                   <p className="mt-2 font-liber text-gray-700 text-sm leading-relaxed">
                     {item.text}

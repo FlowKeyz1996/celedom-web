@@ -48,13 +48,13 @@ const BenefitsSection = () => {
             />
           </span>
 
-          <p className="font-liber text-[15px]  text-[#F24E1E]">
+          <p className="font-liber text-md  text-primary">
             Switch between List and Calendar view
           </p>
         </div>
 
         {/* Description */}
-        <p className="font-liber text-[#6B6B6B] text-[16.5px] leading-[1.75] mb-6">
+        <p className="font-liber text-paragraph text-[16.5px] leading-[1.75] mb-6">
           Stay organized with options: quickly scan upcoming events in list
           view or manage your schedule visually in calendar view. Choose
           the view that works best for you, see all your bookings in a simple
