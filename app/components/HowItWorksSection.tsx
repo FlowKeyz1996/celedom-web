@@ -4,7 +4,22 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-const features = [
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface HowItWorksSectionProps {
+  leftSubtitle?: string;
+  leftHeader?: string;
+  leftParagraph?: string;
+  features?: Feature[];
+  primaryCtaText?: string;
+  secondaryCtaText?: string;
+}
+
+const defaultFeatures: Feature[] = [
   {
     icon: "/acceptance-logo.png",
     title: "Accept Requests With Ease",
@@ -25,14 +40,16 @@ const features = [
   },
 ];
 
-const HowItWorksSection = () => {
+const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
+  leftSubtitle = "HOW IT WORKS",
+  leftHeader = "How Does Celedom Work?",
+  leftParagraph = "Set up your business profile in just a few minutes and instantly showcase your services, skills, and specialties to thousands of celebrants searching for vendors to hire for their events.",
+  features = defaultFeatures,
+  primaryCtaText = "Read about us",
+  secondaryCtaText = "Download app",
+}) => {
   const rightRef = useRef(null);
-
-  const isInView = useInView(rightRef, {
-    once: false,
-    amount: 0.3,
-    margin: "-60px",
-  });
+  const isInView = useInView(rightRef, { once: false, amount: 0.3, margin: "-60px" });
 
   return (
     <section className="w-full bg-white py-24">
@@ -41,31 +58,29 @@ const HowItWorksSection = () => {
         {/* LEFT SIDE */}
         <div className="flex flex-col md:mt-24">
           <p className="font-liber text-[13px] tracking-[0.15em] text-tertiary mb-4">
-            HOW IT WORKS
+            {leftSubtitle}
           </p>
 
           <h2 className="font-gendy text-[42px] leading-[1.1] text-primary mb-6">
-            How Does Celedom Work?
+            {leftHeader}
           </h2>
 
           <p className="font-liber text-paragraph text-[16px] leading-[1.75] mb-10 max-w-[430px]">
-            Set up your business profile in just a few minutes and instantly
-            showcase your services, skills, and specialties to thousands of
-            celebrants searching for vendors to hire for their events.
+            {leftParagraph}
           </p>
 
           <div className="flex items-center gap-4">
             <button className="px-6 py-2.5 border border-[#C9C9C9] rounded-full font-liber text-[15px] text-primary hover:bg-gray-50 transition">
-              Read about us
+              {primaryCtaText}
             </button>
 
             <button className="px-6 py-2.5 bg-secondary text-white rounded-full font-liber text-[15px] hover:bg-[#1A63d3] transition hover:cursor-pointer">
-              Download app
+              {secondaryCtaText}
             </button>
           </div>
         </div>
 
-        {/* ✅ RIGHT SIDE — ONLY ALIGNMENT MODIFIED */}
+        {/* RIGHT SIDE */}
         <div ref={rightRef} className="flex flex-col gap-12">
           {features.map((item, index) => (
             <motion.div
@@ -82,22 +97,13 @@ const HowItWorksSection = () => {
                 ease: "easeOut",
               }}
             >
-              {/* ✅ Icon + Title on same line */}
+              {/* Icon + Title */}
               <div className="flex gap-2 items-center mb-1">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={34}
-                  height={34}
-                  className="shrink-0"
-                />
-
-                <h3 className="font-gendy text-[18px] text-primary mb-0 leading-tight">
-                  {item.title}
-                </h3>
+                <Image src={item.icon} alt={item.title} width={34} height={34} className="shrink-0" />
+                <h3 className="font-gendy text-[18px] text-primary mb-0 leading-tight">{item.title}</h3>
               </div>
 
-              {/* ✅ Paragraph unchanged from your original */}
+              {/* Description */}
               <p className="font-liber text-paragraph text-[16px] leading-[1.75] mb-0 max-w-[430px]">
                 {item.description}
               </p>

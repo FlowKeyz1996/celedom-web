@@ -4,6 +4,17 @@ import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
+interface Card {
+  imgSrc: string;
+  title?: string;
+  description?: string;
+}
+
+interface HeroSectionProps {
+  headingHighlight: string;
+  cards: Card[];
+}
+
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: (i: number) => ({
@@ -17,14 +28,14 @@ const cardVariants: Variants = {
   }),
 };
 
-const HeroSection = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({ headingHighlight, cards }) => {
   return (
     <section className="w-full bg-white pt-32 pb-20 px-6 flex flex-col items-center">
       {/* === Heading === */}
       <div className="max-w-3xl text-center flex flex-col items-center gap-4">
         <h1 className="font-gendy text-4xl sm:text-5xl leading-tight text-primary">
           Welcome to Celedom, Your <br />
-          exciting <span className="text-tertiary italic">Success</span> Begins Here
+          exciting <span className="text-tertiary italic">{headingHighlight}</span> Begins Here
         </h1>
 
         {/* CTAs */}
@@ -39,91 +50,35 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* === Cards (Medium Size) === */}
+      {/* === Cards === */}
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-4 gap-6 w-full max-w-6xl">
-        
-        {/* Card 1 */}
-        <motion.div
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          className="shadow-md overflow-hidden bg-white h-[360px]"
-        >
-          <Image
-            src="/hero-img-one.png"
-            alt="Card 1"
-            width={700}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+        {cards.map((card, index) => (
+          <motion.div
+            key={index}
+            custom={index}
+            initial="hidden"
+            animate="visible"
+            variants={cardVariants}
+            className={`shadow-md overflow-hidden bg-white h-[360px] ${
+              card.title ? "rounded-xl flex flex-col" : ""
+            }`}
+          >
+            <Image
+              src={card.imgSrc}
+              alt={`Card ${index + 1}`}
+              width={700}
+              height={500}
+              className={`w-full ${card.title ? "h-[70%]" : "h-full"} object-cover`}
+            />
 
-        {/* Card 2 */}
-        <motion.div
-          custom={1}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          className="rounded-xl shadow-md bg-white h-[360px] flex flex-col overflow-hidden"
-        >
-          <Image
-            src="/hero-img-two.png"
-            alt="Card 2"
-            width={700}
-            height={500}
-            className="w-full h-[70%] object-cover"
-          />
-
-          <div className="p-4 flex-1 flex flex-col justify-center font-liber text-sm text-secondary">
-            <p className="text-primary font-semibold">Accept Booking Seamlessly</p>
-            <p className="text-paragraph mt-1 text-xs">
-              Receive and respond to request in-app. Making it easy to secure clients and confirm events without hassle
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Card 3 */}
-        <motion.div
-          custom={2}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          className=" shadow-md overflow-hidden bg-white h-[360px]"
-        >
-          <Image
-            src="/hero-img-three.png"
-            alt="Card 3"
-            width={700}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-
-        {/* Card 4 */}
-        <motion.div
-          custom={3}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          className="rounded shadow-md bg-white h-[360px] flex flex-col overflow-hidden"
-        >
-          <Image
-            src="/hero-img-four.png"
-            alt="Card 4"
-            width={700}
-            height={500}
-            className="w-full h-[70%] object-cover"
-          />
-
-         <div className="p-4 flex-1 flex flex-col justify-center font-liber text-sm text-secondary">
-            <p className="text-primary font-semibold">Track Your Success In Real Time</p>
-            <p className="text-paragraph mt-1 text-xs">
-              Access powerful analytics to see how your business is performing and make smarter decisions to grow.
-            </p>
-          </div>
-        </motion.div>
-
+            {card.title && card.description && (
+              <div className="p-4 flex-1 flex flex-col justify-center font-liber text-sm text-secondary">
+                <p className="text-primary font-semibold">{card.title}</p>
+                <p className="text-paragraph mt-1 text-xs">{card.description}</p>
+              </div>
+            )}
+          </motion.div>
+        ))}
       </div>
     </section>
   );
