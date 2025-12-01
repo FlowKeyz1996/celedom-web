@@ -14,13 +14,13 @@ const VendorsPage = () => {
     {
       imgSrc: "/hero-img-two.png",
       title: "Accept Booking Seamlessly",
-      description: "Receive and respond to requests in-app.",
+      description: "Receive and respond to requests in-app, making it easy to secure clients and confirm events without the hassle.",
     },
     { imgSrc: "/hero-img-three.png" },
     {
       imgSrc: "/hero-img-four.png",
       title: "Track Your Success In Real Time",
-      description: "Access analytics to see how your business is performing.",
+      description: "Access powerful analytics to see how your business is performing and make smarter decisions to grow.",
     },
   ]}
 />
@@ -40,17 +40,26 @@ const VendorsPage = () => {
     {
       icon: "/track-business-logo.png",
       title: "Track Your Business Performance",
-      description: "Custom description for feature 2.",
+      description: "Access built-in analytics that show you how your business is doing, from the number of bookings to client engagement. Use insights to grow smarter and make better decisions for your services.",
     },
     {
       icon: "/stay-organized-logo.png",
-      title: "Custom Feature 3",
-      description: "Custom description for feature 3.",
+      title: "Stay Organized with Your Calendar",
+      description: "Set up your calendar directly in the app to manage all your upcoming events. Never miss a booking, double-check your schedule, and keep your business running smoothly.",
     },
   ]}
 />
 
-    <BenefitsSection/>
+    <BenefitsSection
+  label="FEATURES"
+  header="Manage Your Bookings Efficiently"
+  iconPath="/icons/custom-icon.svg"
+  iconText="Toggle between List and Calendar view"
+  description="Quickly check your upcoming events in list view or visually plan them in calendar view. Make your workflow smooth and efficient."
+  buttonText="Get Started"
+  imageSrc="/Benefits-img.png"
+  imageAlt="custom calendar UI"
+/>
     <BenefitsManageSection/>
     <TestimonialsSection/>
   </div>;

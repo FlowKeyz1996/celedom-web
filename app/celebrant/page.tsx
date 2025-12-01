@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import HowItWorksSection from '../components/HowItWorksSection';
+import BenefitsSection from '../components/BenefitsSection';
 
 const CelebrantPage = () => {
   return (
@@ -45,6 +46,16 @@ const CelebrantPage = () => {
       description: "Compare vendors, check their packages, and book the one that fits your budget. With flexible options, you can celebrate your big moments without breaking the bank.",
     },
   ]}
+/>
+ <BenefitsSection
+  label="BENEFITS"
+  header="Tailored Recommendations"
+  iconPath="/icons/custom-icon.svg"
+  iconText="Toggle between List and Calendar view"
+  description="Enjoy a tailored experience where every suggestion is based on your preference and your event vision. Discover vendors curated based on your preference, so you only see services that match your style and event needs."
+  buttonText="Download App"
+  imageSrc="/Benefits-img.png"
+  imageAlt="custom calendar UI"
 />
 
     

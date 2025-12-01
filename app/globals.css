@@ -12,7 +12,7 @@
 
 /* ===== Fonts ===== */
 body {
-  font-family: var(--font-liber), sans-serif; /* Liber is default */
+  font-family: var(--font-liber-local), sans-serif; /* Liber is default */
   background-color: var(--background);
   color: var(--foreground); /* default text color */
   -webkit-font-smoothing: antialiased;
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-gendy), sans-serif;
 }
 .font-liber {
-  font-family: var(--font-liber), sans-serif;
+  font-family: var(--font-liber-local), sans-serif;
 }
 
 /* Text color utilities */

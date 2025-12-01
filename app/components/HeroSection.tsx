@@ -73,7 +73,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headingHighlight, cards }) =>
 
             {card.title && card.description && (
               <div className="p-4 flex-1 flex flex-col justify-center font-liber text-sm text-secondary">
-                <p className="text-primary font-semibold">{card.title}</p>
+                <p className="text-primary font-gendy text-[16px]">{card.title}</p>
                 <p className="text-paragraph mt-1 text-xs">{card.description}</p>
               </div>
             )}
