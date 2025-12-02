@@ -56,11 +56,11 @@ const CelebrantPage = () => {
   iconText="Toggle between List and Calendar view"
   description="Enjoy a tailored experience where every suggestion is based on your preference and your event vision. Discover vendors curated based on your preference, so you only see services that match your style and event needs."
   buttonText="Download App"
-  imageSrc="/Benefits-img.png"
+  imageSrc="/celebrant-benefits-image.png"
   imageAlt="custom calendar UI"
 />
 <BenefitsManageSection
-  imageSrc="/Benefit-img2.png"
+  imageSrc="/celebrant-benefits-image2.png"
   tag="BENEFITS"
   title="Manage Activities In One Place"
   iconSrc="/benefits-celebration-icon.png"
