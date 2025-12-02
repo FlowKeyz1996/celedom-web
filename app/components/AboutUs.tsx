@@ -70,16 +70,7 @@ export default function AboutPage() {
         </h1>
 
         {/* Avatar */}
-        <div className="w-14 h-14 rounded-full overflow-hidden border-4 border-white shadow-lg">
-          <Image
-            src="/ceo-avatar.png"
-            alt=""
-            width={60}
-            height={60}
-            className="object-cover"
-            priority
-          />
-        </div>
+        
       </motion.div>
 
       {/* ===== MAIN FLEX LAYOUT ===== */}
@@ -96,8 +87,8 @@ export default function AboutPage() {
             className="w-full h-[260px] rounded-2xl shadow-md overflow-hidden relative"
           >
             <Image
-              src="/about-img1.png"
-              alt=""
+              src="/about-us-image.png"
+              alt="about us image"
               fill
               className="object-cover"
             />
@@ -111,7 +102,7 @@ export default function AboutPage() {
             className="w-full h-[260px] rounded-2xl shadow-md overflow-hidden relative"
           >
             <Image
-              src="/about-img2.png"
+              src="/about-us-image2.png"
               alt=""
               fill
               className="object-cover"

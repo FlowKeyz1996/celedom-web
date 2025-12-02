@@ -53,15 +53,15 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
   imageHeight = 900,
 }) => {
   return (
-    <section className="w-full bg-white px-6 py-10 flex flex-col md:flex-row items-center md:items-start gap-14 max-w-7xl mx-auto">
-
+    <section className="w-full bg-white px-6 py-10 flex flex-col-reverse md:flex-row items-center md:items-start gap-14 max-w-7xl mx-auto">
+      
       {/* ===== LEFT DIV (Image) ===== */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={fadeUp}
         viewport={{ once: false, amount: 0.3 }}
-        className="flex-1 flex justify-center"
+        className="flex-1 flex justify-center md:justify-start"
       >
         <Image
           src={imageSrc}
