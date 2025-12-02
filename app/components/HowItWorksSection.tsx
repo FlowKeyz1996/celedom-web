@@ -57,11 +57,11 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
 
         {/* LEFT SIDE */}
         <div className="flex flex-col md:mt-24">
-          <p className="font-liber text-[13px] tracking-[0.15em] text-tertiary mb-4">
+          <p className="font-liber text-[15px] tracking-[0.15em] text-reddish mb-4">
             {leftSubtitle}
           </p>
 
-          <h2 className="font-gendy text-[42px] leading-[1.1] text-primary mb-6">
+          <h2 className="font-gendy text-[42px] leading-[1.1] text-primary mb-4">
             {leftHeader}
           </h2>
 
@@ -70,7 +70,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="px-6 py-2.5 border border-[#C9C9C9] rounded-full font-liber text-[15px] text-primary hover:bg-gray-50 transition">
+            <button className="px-6 py-2.5 border border-[#C9C9C9] rounded-full font-liber text-[15px] text-primary hover:cursor-pointer hover:bg-gray-50 transition">
               {primaryCtaText}
             </button>
 

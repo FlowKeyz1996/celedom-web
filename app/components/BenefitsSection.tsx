@@ -56,7 +56,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
         </h2>
 
         {/* Icon row */}
-        <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+        <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
           <span className="w-8 h-8 bg-tertiary rounded-full flex items-center justify-center shrink-0">
             <Image
               src={iconPath}

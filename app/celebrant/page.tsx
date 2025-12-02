@@ -33,17 +33,17 @@ const CelebrantPage = () => {
   secondaryCtaText="Download App"
   features={[
     {
-      icon: "/acceptance-logo.png",
+      icon: "/celebrant-how-it-works-icon1.png",
       title: "Discover Vendors Just for You",
       description: "Explore a personalized page filled with vendors tailored to your preferences, event type, and style. From birthdays to weddings, you’ll see options that match exactly what you’re looking for.",
     },
     {
-      icon: "/track-business-logo.png",
+      icon: "/celebrant-how-it-works-icon.png",
       title: "Send Requests in Seconds",
       description: "Found a vendor you love? Send them a request with just a few taps. Communicate your needs clearly and get quick responses to bring your vision to life.",
     },
     {
-      icon: "/stay-organized-logo.png",
+      icon: "/celebrant-how-it-works-icon3.png",
       title: "Book Within Your Budget",
       description: "Compare vendors, check their packages, and book the one that fits your budget. With flexible options, you can celebrate your big moments without breaking the bank.",
     },
@@ -52,7 +52,7 @@ const CelebrantPage = () => {
  <BenefitsSection
   label="BENEFITS"
   header="Tailored Recommendations"
-  iconPath="/icons/custom-icon.svg"
+  iconPath="/benefit-celebrant-icon.png"
   iconText="Toggle between List and Calendar view"
   description="Enjoy a tailored experience where every suggestion is based on your preference and your event vision. Discover vendors curated based on your preference, so you only see services that match your style and event needs."
   buttonText="Download App"
