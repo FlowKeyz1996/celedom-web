@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -37,26 +37,34 @@ const testimonials = [
 
 const TestimonialsSection: React.FC = () => {
   const [index, setIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3); // default desktop
 
-  const next = () => setIndex((i) => (i + 1) % testimonials.length);
+  // Handle responsive card count
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setCardsToShow(1);
+      else if (window.innerWidth < 1024) setCardsToShow(2);
+      else setCardsToShow(3);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const next = () =>
+    setIndex((i) => (i + 1) % testimonials.length);
+
   const prev = () =>
     setIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
 
-  // ✅ Show only 1 card if screen is mobile, otherwise 3
-  const isMobile =
-    typeof window !== "undefined" && window.innerWidth < 768;
-
-  const visible = isMobile
-    ? [testimonials[index]]
-    : [
-        testimonials[index],
-        testimonials[(index + 1) % testimonials.length],
-        testimonials[(index + 2) % testimonials.length],
-      ];
+  const visible = Array.from({ length: cardsToShow }, (_, i) => {
+    return testimonials[(index + i) % testimonials.length];
+  });
 
   return (
     <section className="w-full py-24 flex flex-col items-center">
-      <p className="text-[#ca6d70] font-liber tracking-widest text-xs mb-2">
+      <p className="text-reddish font-liber tracking-widest text-md mb-2">
         TESTIMONIALS
       </p>
 
@@ -68,7 +76,7 @@ const TestimonialsSection: React.FC = () => {
         {/* Left Arrow */}
         <button
           onClick={prev}
-          className="absolute -left-6 md:-left-10 bg-white rounded-full shadow-md p-3 hover:bg-gray-50 transition"
+          className="absolute -left-4 md:-left-10 bg-white rounded-full shadow-md p-3 hover:bg-gray-50 transition"
         >
           ←
         </button>
@@ -82,7 +90,7 @@ const TestimonialsSection: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.35 }}
-                className="w-80 h-96 relative rounded-2xl overflow-hidden shadow-lg"
+                className="w-72 sm:w-80 h-96 relative rounded-2xl overflow-hidden shadow-lg"
               >
                 {/* Background Image */}
                 <Image
@@ -94,7 +102,6 @@ const TestimonialsSection: React.FC = () => {
 
                 {/* Content Card */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[85%] bg-white rounded-xl shadow-md p-5 text-center">
-                  {/* Avatar */}
                   <div className="w-16 h-16 mx-auto -mt-10 rounded-full overflow-hidden border-4 border-white shadow-md">
                     <Image
                       src={item.avatar}
@@ -126,7 +133,7 @@ const TestimonialsSection: React.FC = () => {
         {/* Right Arrow */}
         <button
           onClick={next}
-          className="absolute -right-6 md:-right-10 bg-white rounded-full shadow-md p-3 hover:bg-gray-50 transition"
+          className="absolute -right-4 md:-right-10 bg-white rounded-full shadow-md p-3 hover:bg-gray-50 transition"
         >
           →
         </button>

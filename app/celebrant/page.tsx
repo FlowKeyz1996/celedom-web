@@ -14,14 +14,14 @@ const CelebrantPage = () => {
     { imgSrc: "/celebrant-hero-img.png" },
     {
       imgSrc: "/celebrant-hero-img2.png",
-      title: "Accept Booking Seamlessly",
-      description: "Receive and respond to requests in-app.",
+      title: "Celebrate every milestone",
+      description: "From birthdays to weddings, every milestone is worth celebrating with the right people, services, and unforgettable experiences.",
     },
     { imgSrc: "/celebrant-hero-img3.png" },
     {
       imgSrc: "/celebrant-hero-img4.png",
-      title: "Track Your Success In Real Time",
-      description: "Access analytics to see how your business is performing.",
+      title: "Enjoy your event in style",
+      description: "Turn ordinary gatherings into extraordinary experiences with services designed to impress. From décor to dining, find everything you need to create an event that’s elegant & uniquely yours",
     },
   ]}
 />
@@ -63,7 +63,7 @@ const CelebrantPage = () => {
   imageSrc="/Benefit-img2.png"
   tag="BENEFITS"
   title="Manage Activities In One Place"
-  iconSrc="/icons/calendar-red.svg"
+  iconSrc="/benefits-celebration-icon.png"
   iconAlt="calendar list toggle icon"
   highlightText="Switch between List and Calendar view"
   description="Stay organized with options: quickly scan upcoming events in list view or manage your schedule visually in calendar view. Choose the view that works best for you, see all your bookings in a simple list, or track them by date in your calendar."

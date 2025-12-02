@@ -88,13 +88,13 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
           {tag}
         </p>
 
-        <h2 className="font-gendy text-4xl leading-[1.12] text-black mb-4">
+        <h2 className="font-gendy text-4xl leading-[1.12] text-black mb-2">
           {title}
         </h2>
 
-        <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+        <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
           <span
-            className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+            className="w-8 h-8 rounded-full flex items-center bg-tertiary justify-center shrink-0"
             style={{ backgroundColor: `${textColor}10` }}
           >
             <Image

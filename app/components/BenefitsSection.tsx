@@ -51,7 +51,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
         </p>
 
         {/* Heading */}
-        <h2 className="font-gendy text-4xl leading-[1.12] text-black mb-4">
+        <h2 className="font-gendy text-4xl leading-[1.12] text-black mb-2">
           {header}
         </h2>
 
