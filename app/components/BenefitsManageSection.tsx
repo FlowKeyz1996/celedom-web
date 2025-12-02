@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
@@ -17,7 +18,40 @@ const fadeUp: Variants = {
   },
 };
 
-const BenefitsManageSection = () => {
+interface BenefitsManageProps {
+  imageSrc: string;
+  tag?: string;
+  title?: string;
+  iconSrc?: string;
+  iconAlt?: string;
+  highlightText?: string;
+  description?: string;
+  buttonText?: string;
+  buttonColor?: string;
+  textColor?: string;
+  shadowSize?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
+  imageSrc,
+  tag = "BENEFITS",
+  title = "Manage Activities In One Place",
+  iconSrc = "/icons/calendar-red.svg",
+  iconAlt = "calendar list toggle icon",
+  highlightText = "Switch between List and Calendar view",
+  description = `Stay organized with options: quickly scan upcoming events in list
+  view or manage your schedule visually in calendar view. Choose
+  the view that works best for you, see all your bookings in a simple
+  list, or track them by date in your calendar.`,
+  buttonText = "Download App",
+  buttonColor = "#0057FF",
+  textColor = "#F24E1E",
+  shadowSize = "drop-shadow-2xl",
+  imageWidth = 800,
+  imageHeight = 900,
+}) => {
   return (
     <section className="w-full bg-white px-6 py-20 flex flex-col md:flex-row items-center md:items-start gap-14 max-w-7xl mx-auto">
 
@@ -30,11 +64,11 @@ const BenefitsManageSection = () => {
         className="flex-1 flex justify-center"
       >
         <Image
-          src="/Benefit-img2.png"
-          alt="calendar phone ui mockup"
-          width={800}
-          height={900}
-          className="w-[80%] md:w-[450px] lg:w-[450px] xl:w-[500px] drop-shadow-2xl"
+          src={imageSrc}
+          alt={iconAlt}
+          width={imageWidth}
+          height={imageHeight}
+          className={`w-[80%] md:w-[450px] lg:w-[450px] xl:w-[500px] ${shadowSize}`}
           priority
         />
       </motion.div>
@@ -44,42 +78,54 @@ const BenefitsManageSection = () => {
         initial="hidden"
         whileInView="visible"
         variants={fadeUp}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="flex-1 text-center md:text-left max-w-xl mt-auto mb-auto"
       >
-        <p className="font-liber text-[13px] tracking-[0.15em] text-[#F24E1E] mb-3 uppercase">
-          BENEFITS
+        <p
+          className="font-liber text-[13px] tracking-[0.15em] mb-3 uppercase"
+          style={{ color: textColor }}
+        >
+          {tag}
         </p>
 
         <h2 className="font-gendy text-4xl leading-[1.12] text-black mb-4">
-          Manage Activities In One Place
+          {title}
         </h2>
 
         <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-          <span className="w-8 h-8 bg-[#F24E1E]/10 rounded-full flex items-center justify-center shrink-0">
+          <span
+            className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+            style={{ backgroundColor: `${textColor}10` }}
+          >
             <Image
-              src="/icons/calendar-red.svg"
-              alt="calendar list toggle icon"
+              src={iconSrc}
+              alt={iconAlt}
               width={14}
               height={14}
               className="w-3.5 h-3.5"
             />
           </span>
 
-          <p className="font-liber text-[15px] text-[#F24E1E]">
-            Switch between List and Calendar view
+          <p
+            className="font-liber text-[15px]"
+            style={{ color: textColor }}
+          >
+            {highlightText}
           </p>
         </div>
 
-        <p className="font-liber text-[#6B6B6B] text-[16.5px] leading-[1.75] mb-6">
-          Stay organized with options: quickly scan upcoming events in list
-          view or manage your schedule visually in calendar view. Choose
-          the view that works best for you, see all your bookings in a simple
-          list, or track them by date in your calendar.
+        <p
+          className="font-liber text-[16.5px] leading-[1.75] mb-6"
+          style={{ color: "#6B6B6B" }}
+        >
+          {description}
         </p>
 
-        <button className="px-7 py-3 bg-[#0057FF] text-white rounded-full font-liber text-[15px] w-fit hover:opacity-90 transition mx-auto md:mx-0">
-          Download App
+        <button
+          className="px-7 py-3 text-white rounded-full font-liber text-[15px] w-fit hover:opacity-90 transition mx-auto md:mx-0"
+          style={{ backgroundColor: buttonColor }}
+        >
+          {buttonText}
         </button>
       </motion.div>
     </section>

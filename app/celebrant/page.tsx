@@ -2,6 +2,8 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import BenefitsSection from '../components/BenefitsSection';
+import BenefitsManageSection from '../components/BenefitsManageSection';
+import TestimonialsSection from '../components/TestimonialsSection';
 
 const CelebrantPage = () => {
   return (
@@ -57,6 +59,18 @@ const CelebrantPage = () => {
   imageSrc="/Benefits-img.png"
   imageAlt="custom calendar UI"
 />
+<BenefitsManageSection
+  imageSrc="/Benefit-img2.png"
+  tag="BENEFITS"
+  title="Manage Activities In One Place"
+  iconSrc="/icons/calendar-red.svg"
+  iconAlt="calendar list toggle icon"
+  highlightText="Switch between List and Calendar view"
+  description="Stay organized with options: quickly scan upcoming events in list view or manage your schedule visually in calendar view. Choose the view that works best for you, see all your bookings in a simple list, or track them by date in your calendar."
+  buttonText="Download App"
+/>
+<TestimonialsSection/>
+
 
     
     </div>
