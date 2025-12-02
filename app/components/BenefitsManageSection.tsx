@@ -46,7 +46,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
   the view that works best for you, see all your bookings in a simple
   list, or track them by date in your calendar.`,
   buttonText = "Download App",
-  buttonColor = "#0057FF",
+  buttonColor = "#1b6bfe",
   textColor = "text-primary",
   shadowSize = "drop-shadow-2xl",
   imageWidth = 800,
@@ -122,7 +122,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
         </p>
 
         <button
-          className="px-7 py-3 text-white rounded-full font-liber text-[15px] w-fit hover:opacity-90 transition mx-auto md:mx-0"
+          className="px-7 py-3 text-white rounded-full font-liber text-[15px] w-fit hover:cursor-pointer hover:opacity-90 transition mx-auto md:mx-0"
           style={{ backgroundColor: buttonColor }}
         >
           {buttonText}

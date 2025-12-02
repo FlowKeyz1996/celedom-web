@@ -62,12 +62,12 @@ const CelebrantPage = () => {
 <BenefitsManageSection
   imageSrc="/celebrant-benefits-image2.png"
   tag="BENEFITS"
-  title="Manage Activities In One Place"
+  title="An easy way to hire"
   iconSrc="/benefits-celebration-icon.png"
-  iconAlt="calendar list toggle icon"
-  highlightText="Switch between List and Calendar view"
-  description="Stay organized with options: quickly scan upcoming events in list view or manage your schedule visually in calendar view. Choose the view that works best for you, see all your bookings in a simple list, or track them by date in your calendar."
-  buttonText="Download App"
+  iconAlt="Get vendors for your festivities"
+  highlightText="Get vendors for your festivities"
+  description="Easily get vendors for your festivities who match your budget, style, and celebration needs. Celebrate with confidence when you get vendors for your festivities, all organized in one place."
+  buttonText="Book a request"
 />
 <TestimonialsSection/>
 
