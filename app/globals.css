@@ -4,7 +4,8 @@
   --color-primary: #000000;  
   --color-secondary: #1b6bfe; 
   --color-tertiary: #FF6b6b; 
-  --color-paragraph: #4b4b4b;
+  --color-reddish: #F31E1E;
+ --color-paragraph: #4b4b4b;
 
   --background: #ffffff;
   --foreground: var(--color-primary);
@@ -44,6 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .text-paragraph {
   color: var(--color-paragraph);
+}
+.text-reddish{
+  color:var(--color-reddish)
 }
 
 /* Background color utilities */

@@ -47,7 +47,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
   list, or track them by date in your calendar.`,
   buttonText = "Download App",
   buttonColor = "#0057FF",
-  textColor = "#F24E1E",
+  textColor = "text-primary",
   shadowSize = "drop-shadow-2xl",
   imageWidth = 800,
   imageHeight = 900,
@@ -82,7 +82,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
         className="flex-1 text-center md:text-left max-w-xl mt-auto mb-auto"
       >
         <p
-          className="font-liber text-[13px] tracking-[0.15em] mb-3 uppercase"
+          className="font-liber text-[13px] tracking-[0.15em] text-reddish mb-3 uppercase"
           style={{ color: textColor }}
         >
           {tag}
@@ -107,7 +107,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
           </span>
 
           <p
-            className="font-liber text-[15px]"
+            className="font-liber text-[17px]"
             style={{ color: textColor }}
           >
             {highlightText}

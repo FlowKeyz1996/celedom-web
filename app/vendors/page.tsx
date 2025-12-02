@@ -51,12 +51,12 @@ const VendorsPage = () => {
 />
 
     <BenefitsSection
-  label="FEATURES"
-  header="Manage Your Bookings Efficiently"
-  iconPath="/icons/custom-icon.svg"
-  iconText="Toggle between List and Calendar view"
-  description="Quickly check your upcoming events in list view or visually plan them in calendar view. Make your workflow smooth and efficient."
-  buttonText="Get Started"
+  label="BENEFITS"
+  header="Set Up Your Calendar"
+  iconPath="/benefit-icon.png"
+  iconText="Switch between List and Calendar view"
+  description="Stay organized with options: quickly scan upcoming events in list view or manage your schedule visually in calendar view. Choose the view that works best for you, see all your bookings in a simple list or track them by date in your calendar."
+  buttonText="Become a vendor"
   imageSrc="/Benefits-img.png"
   imageAlt="custom calendar UI"
 />
@@ -64,10 +64,10 @@ const VendorsPage = () => {
   imageSrc="/Benefit-img2.png"
   tag="BENEFITS"
   title="Manage Activities In One Place"
-  iconSrc="/icons/calendar-red.svg"
+  iconSrc="/benefit-icon.png"
   iconAlt="calendar list toggle icon"
-  highlightText="Switch between List and Calendar view"
-  description="Stay organized with options: quickly scan upcoming events in list view or manage your schedule visually in calendar view. Choose the view that works best for you, see all your bookings in a simple list, or track them by date in your calendar."
+  highlightText="All-in-one Dashboard"
+  description="Choose the view that works best for you, see all your bookings in a simple list or track them by date in your calendar. Stay in control with a single dashboard that keeps your business organized."
   buttonText="Download App"
 />
 

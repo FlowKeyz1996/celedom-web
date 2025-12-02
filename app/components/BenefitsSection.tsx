@@ -46,7 +46,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
         className="flex-1 text-center md:text-left max-w-lg mt-auto mb-auto"
       >
         {/* Label */}
-        <p className="font-liber text-[13px] tracking-[0.15em] text-tertiary mb-3 uppercase">
+        <p className="font-liber text-[13px] tracking-[0.15em] text-reddish mb-3 uppercase">
           {label}
         </p>
 
@@ -57,7 +57,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
 
         {/* Icon row */}
         <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-          <span className="w-8 h-8 bg-[#F24E1E]/10 rounded-full flex items-center justify-center shrink-0">
+          <span className="w-8 h-8 bg-tertiary rounded-full flex items-center justify-center shrink-0">
             <Image
               src={iconPath}
               alt="icon"
@@ -67,7 +67,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
             />
           </span>
 
-          <p className="font-liber text-md text-primary">{iconText}</p>
+          <p className="font-liber text-md text-primary font-medium">{iconText}</p>
         </div>
 
         {/* Description */}
@@ -76,7 +76,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({
         </p>
 
         {/* CTA Button */}
-        <button className="px-7 py-3 bg-[#0057FF] text-white rounded-full font-liber text-[15px] w-fit hover:opacity-90 transition mx-auto md:mx-0">
+        <button className="px-7 py-3 bg-secondary text-white rounded-full font-liber text-[15px] w-fit hover:opacity-90 transition mx-auto md:mx-0">
           {buttonText}
         </button>
       </motion.div>
