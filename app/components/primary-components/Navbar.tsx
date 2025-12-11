@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import DownloadAppButton from "./DownloadAppButton";
 
 const navItems = [
   { label: "Vendors", href: "/vendors" },
@@ -42,12 +43,12 @@ const Navbar = () => {
                 key={item.label}
                 href={item.href}
                 className={`font-liber text-[15px] relative group transition ${
-                  isActive ? "text-[#1A73E8]" : "text-primary"
+                  isActive ? "text-secondary" : "text-primary"
                 }`}
               >
                 <span
-                  className={`transition-colors duration-300 group-hover:text-[#1A73E8] ${
-                    isActive ? "text-[#1A73E8]" : "text-primary"
+                  className={`transition-colors duration-300 group-hover:text-secondary ${
+                    isActive ? "text-secondary font-semibold" : "text-primary"
                   }`}
                 >
                   {item.label}
@@ -55,7 +56,7 @@ const Navbar = () => {
 
                 {/* underline */}
                 <span
-                  className={`absolute left-0 -bottom-1 h-0.5 transition-all duration-300 bg-[#1A73E8] ${
+                  className={`absolute left-0 -bottom-1 h-0.5 transition-all duration-300 bg-secondary ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 ></span>
@@ -66,9 +67,7 @@ const Navbar = () => {
 
         {/* DOWNLOAD BTN DESKTOP */}
         <div className="hidden md:flex">
-          <button className="font-liber px-5 py-2.5 bg-[#1A73E8] text-white rounded-full text-[15px] hover:bg-[#1764c7] transition">
-            Download App
-          </button>
+        <DownloadAppButton/>
         </div>
 
         {/* MOBILE MENU ICON */}
@@ -128,9 +127,8 @@ const Navbar = () => {
               </nav>
 
               {/* Mobile Download Button */}
-              <button className="mt-10 font-liber px-5 py-3 bg-[#1A73E8] text-white rounded-full text-[16px] hover:bg-[#1764c7] transition">
-                Download App
-              </button>
+              <DownloadAppButton className="mt-10 px-5 py-3 text-[16px] bg-[#1A73E8] hover:bg-[#1764c7]" />
+
             </motion.div>
           </>
         )}
