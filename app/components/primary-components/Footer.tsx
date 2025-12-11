@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,18 +12,18 @@ const Footer = () => {
         className="absolute bottom-0 left-0 w-full rotate-180 pointer-events-none select-none"
       />
 
-      {/* Main grid */}
-      <div className="relative max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 pr-10">
+      {/* Main container */}
+      <div className="relative max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
 
         {/* Left Column - Logo & Email */}
-        <div>
+        <div className="flex flex-col space-y-5 md:w-1/3">
           <h2 className="text-2xl font-gendy text-[#2563eb]">Celedom</h2>
-          <p className="mt-2 text-gray-600 font-liber">
+          <p className="text-gray-600 font-liber">
             Get started now, join our waitlist.
           </p>
 
           {/* Email Input */}
-          <div className="mt-5 flex items-center bg-white shadow-md rounded-full px-4 py-2 w-full max-w-sm">
+          <div className="flex items-center bg-white shadow-md rounded-full px-4 py-2 w-full max-w-sm">
             <input
               type="email"
               placeholder="Enter your email here"
@@ -34,33 +35,36 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Column 2 */}
-        <div>
-          <h4 className="font-gendy text-lg mb-3">Support</h4>
-          <ul className="space-y-2 text-gray-600 font-liber">
-            <li>Help centre</li>
-            <li>About</li>
-            <li>Contact us</li>
-          </ul>
-        </div>
+        {/* Right Column - Support, Help & Product */}
+        <div className="flex justify-between flex-1 gap-10">
+          {/* Support */}
+          <div>
+            <h4 className="font-gendy text-lg mb-3">Support</h4>
+            <ul className="space-y-2 text-gray-600 font-liber">
+              <li>Help centre</li>
+              <li>About</li>
+              <li>Contact us</li>
+            </ul>
+          </div>
 
-        {/* Column 3 */}
-        <div>
-          <h4 className="font-gendy text-lg mb-3">Help and Solution</h4>
-          <ul className="space-y-2 text-gray-600 font-liber">
-            <li>Talk to support</li>
-            <li>FAQs</li>
-          </ul>
-        </div>
+          {/* Help and Solution */}
+          <div>
+            <h4 className="font-gendy text-lg mb-3">Help and Solution</h4>
+            <ul className="space-y-2 text-gray-600 font-liber">
+              <li>Talk to support</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
 
-        {/* Column 4 */}
-        <div>
-          <h4 className="font-gendy text-lg mb-3">Product</h4>
-          <ul className="space-y-2 text-gray-600 font-liber">
-            <li>Data & Security</li>
-            <li>Download Vendor App on Appstore</li>
-            <li>Download Vendor App on Playstore</li>
-          </ul>
+          {/* Product */}
+          <div>
+            <h4 className="font-gendy text-lg mb-3">Product</h4>
+            <ul className="space-y-2 text-gray-600 font-liber">
+              <li>Data & Security</li>
+              <li>Download Vendor App on Appstore</li>
+              <li>Download Vendor App on Playstore</li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -68,7 +72,9 @@ const Footer = () => {
       {/* Bottom row */}
       <div className="relative max-w-[1400px] mx-auto px-6 mt-20 flex justify-between text-sm text-gray-500 font-liber pr-10">
         <p>© 2022 Celedom Inc. Copyright and rights reserved</p>
-        <p>Terms and Conditions</p>
+        <Link href="/terms-and-conditions">
+          <p className="cursor-pointer hover:underline">Terms and Conditions</p>
+        </Link>
       </div>
 
     </footer>

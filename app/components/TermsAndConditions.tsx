@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import AboutUs from './AboutUs';
 
 const TermsAndConditions = () => {
   return (
-    <div>TermsAndConditions</div>
+    <div>
+        <AboutUs/>
+    </div>
   )
 }
 

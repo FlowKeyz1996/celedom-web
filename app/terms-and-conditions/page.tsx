@@ -1,8 +1,11 @@
 import React from 'react'
+import TermsAndConditions from '../components/TermsAndConditions'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+        <TermsAndConditions/>
+    </div>
   )
 }
 
