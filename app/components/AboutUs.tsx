@@ -26,20 +26,20 @@ const aboutSections = [
   {
     title: "About Us",
     text:
-      "CELEDOM, a subsidiary of CelebrationDOM, is a U.S.-based platform (Western New York, PO Box 691, Buffalo) dedicated to making birthdays, weddings, festivals, and any special moment effortless and fun.",
-    icon: "/about-icon.png",
+      "CELEDOM, a subsidiary of CelebrationDOM, is a U.S.-based platform (Western New York, Buffalo) dedicated to making birthdays, weddings, festivals, and any special moment effortless and fun.",
+    icon: "/about-us-icon.png",
   },
   {
     title: "Our Mission",
     text:
       "We connect celebrants with top-tier service providers, offering seamless socializing, buying, selling, and advertising. We keep the rules clear, privacy protected, and the party always on point.",
-    icon: "/mission-icon.jpg",
+    icon: "/our-mission-icon-about-us.png",
   },
   {
     title: "Our Vision",
     text:
       "To become the most trusted digital platform for celebrants globally, redefining how events are booked and managed.",
-    icon: "/vision-icon.png",
+    icon: "/our-vision-icon-about-us.png",
   },
   {
     title: "What We Do",
