@@ -38,25 +38,25 @@ const aboutSections = [
   {
     title: "Our Vision",
     text:
-      "To become the most trusted digital platform for celebrants globally, redefining how events are booked and managed.",
+      "We’ll help you transform every celebration into a meme-worthy, unforgettable experience, where love, laughter, and vibrant energy meet reliable, drama-free technology.",
     icon: "/our-vision-icon-about-us.png",
   },
   {
     title: "What We Do",
     text:
-      "We provide booking management, calendar scheduling, analytics, and communication tools that simplify daily operations.",
-    icon: "/journey-icon.png",
+      "Match users with vetted Service Providers, enable event request fulfillment, commerce, and collaboration.",
+    icon: "/what-we-do--icon-about-us.png",
   },
   {
     title: "Our Promise",
     text:
-      "We promise clarity, consistency, and growth-focused features that respect your time and elevate your craft.",
-    icon: "/promise-icon.png",
+      "Deliver a smooth, automatically updated experience while fostering a community that’s lively, yet drama‑free (unless the party calls for it ).",
+    icon: "/our-promise-icon-about-us.png",
   },
   {
     title: "Bottom Line",
     text:
-      "We help celebrants focus on what matters most — creating unforgettable moments for their clients.",
+      "If your celebration deserves a platform as bold as your playlist and as dependable as a best friend’s RSVP, CELEDOM has you covered. 🎉",
     icon: "/bottom-line-icon.png",
   },
 ];
@@ -138,8 +138,8 @@ export default function AboutPage() {
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={34}
-                  height={34}
+                  width={24}
+                  height={24}
                   className="shrink-0"
                 />
                 <h3 className="font-gendy text-xl text-primary leading-tight">
