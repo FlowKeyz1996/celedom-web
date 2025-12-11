@@ -4,18 +4,20 @@ const TermsAndConditions: React.FC = () => {
   return (
     <div className="w-full flex justify-center bg-white py-12 px-4">
       <div className="w-full max-w-3xl bg-white p-10">
-        {/* Title */}
+        
+        {/* Title (centered) */}
         <h1 className="text-center font-gendy text-[22px] text-black mb-1">
           Celedom Terms And Conditions
         </h1>
+
+        {/* Subtitle (centered) */}
         <p className="text-center font-liber text-[14px] text-gray-800 mb-6">
           Welcome to Celedom
         </p>
 
-        {/* Main Content */}
-        <div className="font-liber text-[14px] leading-[1.55] text-gray-700 space-y-6">
+        {/* Main Content (left-aligned) */}
+        <div className="font-liber text-[14px] leading-[1.55] text-gray-700 space-y-6 text-left">
 
-          {/* Paragraph 1 */}
           <p>
             We’re excited you’re here! Celedom is all about connecting amazing 
             service providers with celebrators for unforgettable events and 
@@ -29,59 +31,64 @@ const TermsAndConditions: React.FC = () => {
 
             <ul className="mt-3 space-y-2 list-disc ml-6">
               <li>
-                <strong>“Celedom”</strong> refers to all Celedom platforms including the 
-                website, mobile app and services.
+                <strong>“Celedom”</strong> is our fabulous platform, including the website, mobile apps, and services.
+              </li>
+              <li><strong>“User”</strong> refers to both service providers and celebrants using celedom</li>
+              <li>
+                <strong>“Celebrants”</strong> is the host of events suchs as birthdays, wedding parties or anniversary etc
               </li>
               <li>
-                <strong>“Users”</strong> refers to individuals accessing Celedom.
+                <strong>“Service Provider”</strong> is the awesome business or individual offering services for events and celebrations, such as event planners, caterers, musicians, DJ, event crew etc.
               </li>
-              <li>
-                <strong>“Celebrators”</strong> refers to users seeking services for 
-                birthdays, weddings, parties, or anniversary events.
-              </li>
-              <li>
-                <strong>“Service Providers”</strong> refers to individuals or businesses 
-                that offer services for events such as planners, caterers, musicians, DJs, etc.
-              </li>
-              <li>
-                <strong>“The Platform”</strong> refers to all Celedom systems where users 
-                connect and interact.
-              </li>
+              
             </ul>
           </div>
 
           {/* USER AGREEMENT (numbered) */}
           <div>
-            <p className="font-semibold text-[15px]">1. User Agreement: Let’s Get This Party Started</p>
+            <p className="font-semibold text-[15px]">
+               User Agreement: Let’s Get This Party Started
+            </p>
 
             <ul className="mt-3 space-y-2 list-decimal ml-6">
-              <li>You agree to provide accurate and up-to-date registration information.</li>
-              <li>You must keep your login credentials safe.</li>
-              <li>
-                Celedom prohibits illegal, harmful, harassing or abusive content or activities 
-                on the platform. Violations may result in account removal.
+              <li>By using Celedom, you agree to follow these terms and conditions</li>
+              <li>You promise to provide accurate, complete, and up-to-date information during the registration process</li>
+              {/* <li>
+                Celedom prohibits illegal, harmful, harassing, or abusive content. 
+                Violations may lead to account removal.
               </li>
               <li>
-                Celedom may send you platform notifications such as newsletters, blogs, 
-                onboarding messages and security alerts.
+                Celedom may send platform notifications such as newsletters, onboarding 
+                messages and security alerts.
+              </li> */}
+            </ul>
+          </div>
+           <div>
+            <p className="font-semibold text-[15px]">User Responsibilities</p>
+
+            <ul className="mt-3 space-y-2 list-decimal ml-6">
+              <li>Keep your account login credentials safe and secure.</li>
+              <li>Use Celedom for good, not otherwise</li>
+              <li>We do not accommodate any form of harrasment, abuse, or intimidation or other internet conduct that go against the community </li>
+              <li>
+                Ensure your events and services comply with all applicable laws and regulations of the community.
+               
               </li>
+              <li>You own the content you post on celedom</li>
+              <li>Whereas you can unsubscribe from non-transactional mails such as welcome Emails, newsletter, blogs(promotional), you cannot unsubscribe from transactional mails such as OTP mails, security mails and transactional mails</li>
             </ul>
           </div>
 
           {/* SERVICE PROVIDER RESPONSIBILITIES */}
           <div>
-            <p className="font-semibold text-[15px]">2. Service Provider Responsibilities</p>
+            <p className="font-semibold text-[15px]"> Service Provider Responsibilities</p>
 
             <ul className="mt-3 space-y-2 list-decimal ml-6">
+              <li>Provide accurate, complete and up-to-date information about your company, services and representatives</li>
+              <li>Ensure your services comply with all applicable laws and regulations</li>
+              <li>Respond promptly to booking requests and communicate clearly with celebrants</li>
               <li>
-                Provide accurate and up-to-date information about your company, services 
-                and availability.
-              </li>
-              <li>Honor your commitments to users.</li>
-              <li>Ensure your services follow applicable regulations and laws.</li>
-              <li>
-                Provide documents that verify the authenticity of your business and be 
-                available for periodic verification.
+                Celedom will requests documents that verify the authenticity of your establishment and will also conduct periodic verification of your operations as a company
               </li>
             </ul>
           </div>
@@ -89,51 +96,54 @@ const TermsAndConditions: React.FC = () => {
           {/* INTELLECTUAL PROPERTY */}
           <div>
             <p className="font-semibold text-[15px]">
-              3. Respecting Happy Vibes: Intellectual Property
+             Intellectual Property: We Love Creativity!
             </p>
 
             <ul className="mt-3 space-y-2 list-decimal ml-6">
-              <li>Celedom maintains all rights and ownership of the platform.</li>
+              <li>Celedom maintains all rights, title, and interest in and to the platform.</li>
               <li>
-                Users grant Celedom a non-exclusive license to upload, store, or display 
-                creative content for platform-related promotional purposes.
+                Users grant Celedom a non-exclusive license to use, reproduce, and display their content for promotional purposes.
               </li>
             </ul>
           </div>
 
           {/* DISCLAIMER */}
+              
           <div>
-            <p className="font-semibold text-[15px]">Disclaimer of Warranties</p>
-            <p className="mt-2">
-              Celedom is provided “as is.” We do not guarantee the platform will be 
-              uninterrupted, secure, or error-free.
+            <p className="font-semibold text-[15px]">
+             Disclaimer of Warranties:
             </p>
+
+            <ul className="mt-3 space-y-2 list-decimal ml-6">
+              <li>Celedom disclaims all warranties, express or implied.</li>
+              <li>
+                We do not promise the platform will be uninterrupted, timely, secure or error-free
+              </li>
+            </ul>
           </div>
 
           {/* LIABILITY */}
+               {/* INTELLECTUAL PROPERTY */}
           <div>
             <p className="font-semibold text-[15px]">
-              Limitation of Liability: We have Got Your Back
+             Limitation of liability: We&apos;ve Got Your Back
             </p>
-            <p className="mt-2">
-              Celedom is not responsible for damages resulting from your use of the 
-              platform. You are responsible for any content you upload.
-            </p>
+
+            <ul className="mt-3 space-y-2 list-decimal ml-6">
+              <li>Celedom shall not be liable for damages arising from use of the platform</li>
+              <li>
+                Our liability is limited to the amount of fees paid by you(if applicable).
+              </li>
+            </ul>
           </div>
 
           {/* ACCOUNT TERMINATION */}
           <div>
-            <p className="font-semibold text-[15px]">
-              Account Termination
-            </p>
+            <p className="font-semibold text-[15px]">Account Termination</p>
 
             <ul className="mt-2 space-y-2 list-decimal ml-6">
-              <li>
-                Celedom may suspend or terminate your account when necessary.
-              </li>
-              <li>
-                When terminated, your right to use the platform stops.
-              </li>
+              <li>Celedom may suspend or terminate accounts when necessary.</li>
+              <li>Upon termination, platform access ends immediately.</li>
             </ul>
           </div>
 
@@ -141,8 +151,7 @@ const TermsAndConditions: React.FC = () => {
           <div>
             <p className="font-semibold text-[15px]">Changes to Terms</p>
             <p className="mt-2">
-              Celedom may update these Terms at any time. Updates will be posted on 
-              the website.
+              Celedom may update these Terms anytime. Updates will appear on the website.
             </p>
           </div>
 
@@ -150,9 +159,8 @@ const TermsAndConditions: React.FC = () => {
           <div>
             <p className="font-semibold text-[15px]">Contact Us</p>
             <p className="mt-2">
-              If you have questions or comments, contact us at 
+              For questions, contact us at 
               <span className="underline"> support@celedom.com</span>.
-              You will be notified when Terms and Conditions change.
             </p>
           </div>
 
@@ -160,19 +168,19 @@ const TermsAndConditions: React.FC = () => {
           <div>
             <p className="font-semibold text-[15px]">Acceptance</p>
             <p className="mt-2">
-              Clicking “I Agree” during registration or login means you accept these 
-              Terms and Conditions.
+              Clicking “I Agree” means you accept these Terms and Conditions.
             </p>
           </div>
 
           <p className="font-semibold mt-6">Thanks for choosing Celedom! 🎉</p>
         </div>
 
-        {/* BUTTONS */}
+        {/* Bottom Buttons */}
         <div className="w-full flex justify-center gap-6 mt-10">
           <button className="px-6 py-2 border border-gray-400 rounded-md font-liber text-[14px]">
             Cancel
           </button>
+
           <button className="px-6 py-2 bg-black text-white rounded-md font-liber text-[14px]">
             I Agree
           </button>
