@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
   return (
     <footer className="relative bg-white py-28 pb-20 overflow-hidden">
 
@@ -73,7 +78,13 @@ const Footer = () => {
       <div className="relative max-w-[1400px] mx-auto px-6 mt-20 flex justify-between text-sm text-gray-500 font-liber pr-10">
         <p>© 2022 Celedom Inc. Copyright and rights reserved</p>
         <Link href="/terms-and-conditions">
-          <p className="cursor-pointer hover:underline">Terms and Conditions</p>
+          <p
+            className={`cursor-pointer hover:underline ${
+              pathname === "/terms-and-conditions" ? "text-secondary" : ""
+            }`}
+          >
+            Terms and Conditions
+          </p>
         </Link>
       </div>
 
