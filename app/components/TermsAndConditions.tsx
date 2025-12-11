@@ -139,35 +139,41 @@ const TermsAndConditions: React.FC = () => {
 
           {/* ACCOUNT TERMINATION */}
           <div>
-            <p className="font-semibold text-[15px]">Account Termination</p>
+            <p className="font-semibold text-[15px]">Termination</p>
 
             <ul className="mt-2 space-y-2 list-decimal ml-6">
-              <li>Celedom may suspend or terminate accounts when necessary.</li>
-              <li>Upon termination, platform access ends immediately.</li>
+              <li>Celedom may suspend or terminate accounts when deemed necessary.</li>
+              <li>Upon termination, your right to use platform ceases.</li>
             </ul>
           </div>
 
           {/* CHANGES */}
           <div>
-            <p className="font-semibold text-[15px]">Changes to Terms</p>
-            <p className="mt-2">
-              Celedom may update these Terms anytime. Updates will appear on the website.
-            </p>
+            <p className="font-semibold text-[15px]">Changes of Term</p>
+
+            <ul className="mt-2 space-y-2 list-decimal ml-6">
+              <li>Celedom can Modify or update these terms at any time</li>
+              <li>Changes are effective upon posting on the celedom website.</li>
+            </ul>
           </div>
+          
 
           {/* CONTACT */}
           <div>
             <p className="font-semibold text-[15px]">Contact Us</p>
             <p className="mt-2">
-              For questions, contact us at 
+              We&apos;re here to help!
               <span className="underline"> support@celedom.com</span>.
             </p>
+            <p>If you have questions or concerns, hit us up at support@celedom.com</p>
+            <p>by using Celedom you acknowledge you&apos;ve read, understood and agreed to these Terms and Conditions</p>
+
+            <p className="py-2">Acceptance:Let&apos;s get This Party Started!</p>
           </div>
 
-          {/* ACCEPTANCE */}
+          
           <div>
-            <p className="font-semibold text-[15px]">Acceptance</p>
-            <p className="mt-2">
+              <p>
               Clicking “I Agree” means you accept these Terms and Conditions.
             </p>
           </div>
@@ -181,7 +187,7 @@ const TermsAndConditions: React.FC = () => {
             Cancel
           </button>
 
-          <button className="px-6 py-2 bg-black text-white rounded-md font-liber text-[14px]">
+          <button className="px-6 py-2 bg-secondary text-white rounded-full font-liber text-[14px]">
             I Agree
           </button>
         </div>
