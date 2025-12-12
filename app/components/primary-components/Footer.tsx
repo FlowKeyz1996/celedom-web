@@ -76,7 +76,7 @@ const Footer = () => {
 
       {/* Bottom row */}
       <div className="relative max-w-[1400px] mx-auto px-6 mt-20 flex justify-between text-sm text-gray-500 font-liber pr-10">
-        <p>© 2022 Celedom Inc. Copyright and rights reserved</p>
+        <p>© 2025 Celedom Inc. Copyright and rights reserved</p>
         <Link href="/terms-and-conditions">
           <p
             className={`cursor-pointer hover:underline ${
