@@ -56,7 +56,7 @@ const ContactUs = () => {
 
           {/* CENTERED HEADER - INSIDE CARD */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-semibold text-gray-900">Get in touch</h2>
+            <h2 className="text-4xl font-medium text-gray-900">Get in touch</h2>
             <p className="mt-2 text-gray-600">
               Reach out, let’s see how celedom can make your dreams a possibility!
             </p>

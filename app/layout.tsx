@@ -6,8 +6,9 @@ import Navbar from "./components/primary-components/Navbar";
 import Footer from "./components/primary-components/Footer";
 
 export const metadata: Metadata = {
-  title: "Celedom ",
+  title: "Celedom",
   description: "Celedom, Your number one celebration Application",
+  
 };
 
 export default function RootLayout({
