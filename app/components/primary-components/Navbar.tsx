@@ -12,7 +12,7 @@ const navItems = [
   { label: "Celebrant", href: "/celebrant" },
   { label: "About Us", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const Navbar = () => {
