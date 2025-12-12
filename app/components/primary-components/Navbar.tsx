@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import DownloadAppButton from "./DownloadAppButton";
 
 const navItems = [
@@ -54,7 +55,6 @@ const Navbar = () => {
                   {item.label}
                 </span>
 
-                {/* underline */}
                 <span
                   className={`absolute left-0 -bottom-1 h-0.5 transition-all duration-300 bg-secondary ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -67,13 +67,13 @@ const Navbar = () => {
 
         {/* DOWNLOAD BTN DESKTOP */}
         <div className="hidden md:flex">
-        <DownloadAppButton/>
+          <DownloadAppButton/>
         </div>
 
         {/* MOBILE MENU ICON */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setIsOpen(true)}>
-            <Image src="/icons/menu.svg" alt="menu" width={26} height={26} />
+            <Menu size={28} className="text-primary" />
           </button>
         </div>
       </div>
@@ -102,7 +102,7 @@ const Navbar = () => {
               {/* Close Button */}
               <div className="flex justify-end mb-8">
                 <button onClick={() => setIsOpen(false)}>
-                  <Image src="/icons/close.svg" alt="close" width={28} height={28} />
+                  <X size={30} className="text-primary" />
                 </button>
               </div>
 

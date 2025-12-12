@@ -137,7 +137,7 @@ const ContactUs = () => {
             {/* RIGHT IMAGE */}
             <div className="w-full md:w-1/2 rounded-lg overflow-hidden border border-gray-200">
               <Image
-                src="/your-image.jpg"
+                src="/contact-us-img.png"
                 alt="contact"
                 width={700}
                 height={600}
