@@ -13,6 +13,14 @@ const ContactUs = () => {
     message: "",
   });
 
+  // check if all fields are filled
+  const allFilled =
+    data.firstName.trim() &&
+    data.lastName.trim() &&
+    data.email.trim() &&
+    data.phone.trim() &&
+    data.message.trim();
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -21,6 +29,9 @@ const ContactUs = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!allFilled) return;
+
     setLoading(true);
 
     try {
@@ -51,10 +62,10 @@ const ContactUs = () => {
     <section className="w-full bg-[#F4F6FF] flex justify-center py-24 px-4">
       <div className="w-full max-w-5xl">
 
-        {/* WHITE CARD */}
+        {/* CARD */}
         <div className="bg-white shadow-sm rounded-xl border border-gray-200 p-8 md:p-12">
 
-          {/* CENTERED HEADER - INSIDE CARD */}
+          {/* HEADER */}
           <div className="text-center mb-10">
             <h2 className="text-4xl font-medium text-gray-900">Get in touch</h2>
             <p className="mt-2 text-gray-600">
@@ -62,7 +73,7 @@ const ContactUs = () => {
             </p>
           </div>
 
-          {/* FORM + IMAGE SECTION */}
+          {/* FORM + IMAGE */}
           <div className="flex flex-col md:flex-row gap-8 items-start">
 
             {/* FORM */}
@@ -70,11 +81,11 @@ const ContactUs = () => {
               <div>
                 <p className="text-lg font-semibold text-gray-800">Let’s get you sorted</p>
                 <p className="text-sm text-gray-500">
-                  We are only a few deets away. Tell us a little about yourself, Let us handle the rest.
+                  We are only a few deets away. Tell us a little about yourself, let us handle the rest.
                 </p>
               </div>
 
-              {/* First + Last Name */}
+              {/* FIRST + LAST NAME */}
               <div className="flex gap-4">
                 <input
                   name="firstName"
@@ -92,7 +103,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              {/* Email */}
+              {/* EMAIL */}
               <input
                 name="email"
                 type="email"
@@ -102,7 +113,7 @@ const ContactUs = () => {
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-500"
               />
 
-              {/* Phone */}
+              {/* PHONE */}
               <div className="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-2">
                 <span className="text-sm">🇳🇬 +234</span>
                 <input
@@ -114,7 +125,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              {/* Message */}
+              {/* MESSAGE */}
               <textarea
                 name="message"
                 placeholder="Write your message..."
@@ -124,11 +135,16 @@ const ContactUs = () => {
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-500"
               />
 
-              {/* Submit */}
+              {/* SUBMIT BUTTON */}
               <button
                 type="submit"
-                disabled={loading}
-                className="w-full bg-[#1A73E8] text-white py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition disabled:opacity-50"
+                disabled={loading || !allFilled}
+                className={`w-full py-2 rounded-md text-sm font-medium transition 
+                  ${
+                    !allFilled || loading
+                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                      : "bg-[#1A73E8] text-white hover:bg-blue-600"
+                  }`}
               >
                 {loading ? "Sending..." : "Send"}
               </button>

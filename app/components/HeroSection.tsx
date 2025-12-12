@@ -51,7 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headingHighlight, cards }) =>
               className="px-6 py-3 bg-secondary text-white rounded-full font-liber text-sm sm:text-base hover:cursor-pointer transition"
               
             >
-              Join Waitlist
+              Download App
             </button>
 
             <button className="px-6 py-3 border border-primary hover:cursor-pointer text-primary rounded-full font-liber text-sm sm:text-base hover:bg-gray-100 transition">
