@@ -2,52 +2,45 @@
 
 import React from "react";
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 
 const getStoreLink = () => {
   if (typeof window === "undefined") return "#";
 
-  const userAgent = navigator.userAgent.toLowerCase();
+  const ua = navigator.userAgent.toLowerCase();
 
   const androidLink =
     "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
-  const iosLink =
-    "https://apps.apple.com/app/YOUR_APP_ID";
+  const iosLink = "https://apps.apple.com/app/YOUR_APP_ID";
 
-  // --- iOS detection ---
-  const isOldIOS = /iphone|ipad|ipod/.test(userAgent);
-  const isNewIOS =
-    /macintosh/.test(userAgent) && typeof document !== "undefined" && "ontouchend" in document;
+  const isOldIOS = /iphone|ipad|ipod/.test(ua);
+  const isNewIOS = /macintosh/.test(ua) && "ontouchend" in document;
 
-  if (isOldIOS || isNewIOS) {
-    return iosLink;
-  }
+  if (isOldIOS || isNewIOS) return iosLink;
+  if (/android|windows|linux/.test(ua)) return androidLink;
+  if (/macintosh/.test(ua)) return iosLink;
 
-  // --- Android detection ---
-  if (/android/.test(userAgent)) {
-    return androidLink;
-  }
-
-  // --- Windows & Linux → Play Store ---
-  if (/windows|linux/.test(userAgent)) {
-    return androidLink;
-  }
-
-  // --- macOS desktop/laptop → Apple Store ---
-  if (/macintosh/.test(userAgent)) {
-    return iosLink;
-  }
-
-  // fallback → Play Store
   return androidLink;
 };
 
+type Variant = "primary" | "outline" | "ghost";
+
 interface DownloadAppButtonProps {
-  className?: string; // optional extra classes
-  children?: React.ReactNode; // optional custom text
+  variant?: Variant;
+  className?: string;
+  children?: React.ReactNode;
 }
 
+const variantStyles: Record<Variant, string> = {
+  primary: "bg-secondary text-white hover:bg-secondary/90",
+  outline:
+    "border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-white",
+  ghost: "bg-transparent text-secondary hover:bg-secondary/10",
+};
+
 const DownloadAppButton: React.FC<DownloadAppButtonProps> = ({
-  className = "",
+  variant = "primary",
+  className,
   children = "Download App",
 }) => {
   const storeLink = getStoreLink();
@@ -56,7 +49,14 @@ const DownloadAppButton: React.FC<DownloadAppButtonProps> = ({
     <Link
       href={storeLink}
       target="_blank"
-      className={`font-liber px-5 py-2.5 bg-secondary text-white rounded-full text-[15px] hover:bg-secondary transition ${className}`}
+      className={cn(
+        // base styles (default)
+        "px-6 py-3 rounded-full font-liber text-sm sm:text-base transition hover:cursor-pointer",
+        // variant styles
+        variantStyles[variant],
+        // user overrides
+        className
+      )}
     >
       {children}
     </Link>

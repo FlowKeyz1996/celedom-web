@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import DownloadAppButton from "./primary-components/DownloadAppButton";
 // import WaitlistModal from "./WaitlistModal";
 
 interface Card {
@@ -47,12 +48,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ headingHighlight, cards }) =>
 
           {/* CTAs */}
           <div className="flex items-center gap-4 mt-4">
-            <button
-              className="px-6 py-3 bg-secondary text-white rounded-full font-liber text-sm sm:text-base hover:cursor-pointer transition"
-              
-            >
-              Download App
-            </button>
+            
+            <DownloadAppButton/>
 
             <button className="px-6 py-3 border border-primary hover:cursor-pointer text-primary rounded-full font-liber text-sm sm:text-base hover:bg-gray-100 transition">
               Watch demo
