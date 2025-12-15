@@ -3,6 +3,8 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
+import Link from "next/link";
+import DownloadAppButton from "./primary-components/DownloadAppButton";
 
 /* =======================
    ANIMATION
@@ -166,12 +168,13 @@ export default function AboutPage() {
         viewport={{ once: false }}
         className="mt-32 flex flex-col sm:flex-row items-center justify-center gap-6"
       >
-        <button className="px-8 py-3 font-liber border border-gray-300 text-primary text-sm rounded-full hover:bg-gray-50 transition">
-          Contact us
-        </button>
-        <button className="px-8 py-3 font-liber bg-secondary text-white text-sm rounded-full hover:opacity-90 transition">
-          Download app
-        </button>
+      
+        <Link href="/contact-us"
+           className="px-8 py-3 font-liber border border-gray-300 text-primary text-sm rounded-full hover:bg-gray-50 transition">
+          
+        Contact us
+        </Link>
+       <DownloadAppButton/>
       </motion.div>
     </section>
   );

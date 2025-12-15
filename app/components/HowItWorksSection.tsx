@@ -3,6 +3,8 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import DownloadAppButton from "./primary-components/DownloadAppButton";
+import Link from "next/link";
 
 interface Feature {
   icon: string;
@@ -70,13 +72,14 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="px-6 py-2.5 border border-[#C9C9C9] rounded-full font-liber text-[15px] text-primary hover:cursor-pointer hover:bg-gray-50 transition">
-              {primaryCtaText}
-            </button>
+            <Link
+  href="/about"
+  className="px-6 py-2.5 border border-[#C9C9C9] rounded-full font-liber text-[15px] text-primary hover:bg-gray-50 transition inline-flex items-center justify-center"
+>
+  {primaryCtaText}
+</Link>
 
-            <button className="px-6 py-2.5 bg-secondary text-white rounded-full font-liber text-[15px] hover:bg-[#1A63d3] transition hover:cursor-pointer">
-              {secondaryCtaText}
-            </button>
+          <DownloadAppButton/>
           </div>
         </div>
 

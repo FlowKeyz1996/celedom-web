@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import DownloadAppButton from "./primary-components/DownloadAppButton";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -121,12 +122,7 @@ const BenefitsManageSection: React.FC<BenefitsManageProps> = ({
           {description}
         </p>
 
-        <button
-          className="px-7 py-3 text-white rounded-full font-liber text-[15px] w-fit hover:cursor-pointer hover:opacity-90 transition mx-auto md:mx-0"
-          style={{ backgroundColor: buttonColor }}
-        >
-          {buttonText}
-        </button>
+       <DownloadAppButton/>
       </motion.div>
     </section>
   );

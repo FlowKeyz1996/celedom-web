@@ -26,8 +26,13 @@ const getStoreLink = () => {
 type Variant = "primary" | "outline" | "ghost";
 
 interface DownloadAppButtonProps {
+  /** Button style */
   variant?: Variant;
+
+  /** Extra tailwind classes */
   className?: string;
+
+  /** Button text (defaults to "Download App") */
   children?: React.ReactNode;
 }
 
@@ -41,7 +46,7 @@ const variantStyles: Record<Variant, string> = {
 const DownloadAppButton: React.FC<DownloadAppButtonProps> = ({
   variant = "primary",
   className,
-  children = "Download App",
+  children = "Download App", // ✅ DEFAULT TEXT
 }) => {
   const storeLink = getStoreLink();
 
@@ -49,12 +54,10 @@ const DownloadAppButton: React.FC<DownloadAppButtonProps> = ({
     <Link
       href={storeLink}
       target="_blank"
+      rel="noopener noreferrer"
       className={cn(
-        // base styles (default)
-        "px-6 py-3 rounded-full font-liber text-sm sm:text-base transition hover:cursor-pointer",
-        // variant styles
+        "inline-flex items-center justify-center px-7 py-3 rounded-full font-liber text-sm sm:text-base transition hover:cursor-pointer",
         variantStyles[variant],
-        // user overrides
         className
       )}
     >
